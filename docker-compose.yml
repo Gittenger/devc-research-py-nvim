@@ -12,5 +12,5 @@ services:
     tty: true
     stdin_open: true
 
-# Keep the container alive so you can open multiple shells
+# Keep the container alive
     command: bash -lc "sleep infinity"
