@@ -1,0 +1,16 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    
+    volumes:
+      - .:/workspace
+      - ${HOME}/.config/nvim:/root/.config/nvim
+      - ${HOME}/.local/share/nvim:/root/.local/share/nvim
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
+
+# Keep the container alive so you can open multiple shells
+    command: bash -lc "sleep infinity"
