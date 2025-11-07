@@ -3,11 +3,20 @@ services:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
+    environment:
+      - DISPLAY=:0
+      - WAYLAND_DISPLAY=wayland-0
+      # - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      # - PULSE_SERVER=/mnt/wslg/PulseServer
     
     volumes:
       - .:/workspace
       - ${HOME}/.config/nvim:/root/.config/nvim
       - ${HOME}/.local/share/nvim:/root/.local/share/nvim
+      - /mnt/wslg/.X11-unix:/tmp/.X11-unix
+      # - /mnt/wslg/runtime-dir:/mnt/wslg/runtime-dir
+      # - /mnt/wslg/PulseServer:/mnt/wslg/PulseServer
+
     working_dir: /workspace
     tty: true
     stdin_open: true

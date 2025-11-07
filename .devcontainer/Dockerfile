@@ -3,13 +3,13 @@ FROM python:3.12-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
 POETRY_VIRTUALENVS_IN_PROJECT=true \
-PIP_DISABLE_PIP_VERSION_CHECK=1
+VERSION_CHECK=1
 
 
 # Basic CLI tools + Neovim + Node + npm + pyright (LSP server)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git curl ca-certificates ripgrep fd-find nodejs npm bash-completion \
-    build-essential pkg-config unzip 
+    build-essential pkg-config unzip xclip
     
 
 RUN set -eux; \
