@@ -7,8 +7,8 @@ This repo demonstrates running Neovim **inside** a container while mounting your
 ## Dependencies
 - Docker + Docker Compose v2
 - Neovim config at `~/.config/nvim` (mounted read-only)
-- X server -- my setup is for a Windows working machine with WSLg/Xwayland
-  - Recommended for clipboard support, but OSC is configured as fallback
+- X server in host -- my setup is for a Windows working machine with WSLg/Xwayland
+  - Recommended for clipboard support, but OSC is configured as fallback. OSC support is not tested or reliable at the moment.
 
 
 ## Quickstart
